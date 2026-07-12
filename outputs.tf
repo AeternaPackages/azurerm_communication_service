@@ -1,4 +1,9 @@
 # --- azurerm_communication_service ---
+output "communication_services_id" {
+  description = "Map of id values across all communication_services, keyed the same as var.communication_services"
+  value       = module.communication_services.communication_services_id
+}
+
 output "communication_services_data_location" {
   description = "Map of data_location values across all communication_services, keyed the same as var.communication_services"
   value       = module.communication_services.communication_services_data_location
@@ -49,6 +54,11 @@ output "communication_services_tags" {
 }
 
 # --- azurerm_communication_service_email_domain_association ---
+output "communication_service_email_domain_associations_id" {
+  description = "Map of id values across all communication_service_email_domain_associations, keyed the same as var.communication_service_email_domain_associations"
+  value       = module.communication_service_email_domain_associations.communication_service_email_domain_associations_id
+}
+
 output "communication_service_email_domain_associations_communication_service_id" {
   description = "Map of communication_service_id values across all communication_service_email_domain_associations, keyed the same as var.communication_service_email_domain_associations"
   value       = module.communication_service_email_domain_associations.communication_service_email_domain_associations_communication_service_id
