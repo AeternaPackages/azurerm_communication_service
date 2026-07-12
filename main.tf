@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.communication_services : {
       for k2, v2 in coalesce(v1.communication_service_email_domain_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        communication_service_id = module.communication_services.communication_services["${k1}"].id
+        communication_service_id = module.communication_services.communication_services_id["${k1}"]
       })
     }
   ]...)
