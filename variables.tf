@@ -15,7 +15,7 @@ EOT
   type = map(object({
     name                = string
     resource_group_name = string
-    data_location       = optional(string) # Default: "United States"
+    data_location       = optional(string)
     tags                = optional(map(string))
     communication_service_email_domain_associations = optional(map(object({
       email_service_domain_id = string
