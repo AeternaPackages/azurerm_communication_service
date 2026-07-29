@@ -2,10 +2,10 @@ variable "communication_services" {
   description = <<EOT
 Map of communication_services, attributes below
 Required:
+    - data_location
     - name
     - resource_group_name
 Optional:
-    - data_location
     - tags
 Nested communication_service_email_domain_associations (azurerm_communication_service_email_domain_association):
     Required:
@@ -13,9 +13,9 @@ Nested communication_service_email_domain_associations (azurerm_communication_se
 EOT
 
   type = map(object({
+    data_location       = string
     name                = string
     resource_group_name = string
-    data_location       = optional(string)
     tags                = optional(map(string))
     communication_service_email_domain_associations = optional(map(object({
       email_service_domain_id = string

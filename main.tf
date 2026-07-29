@@ -12,12 +12,12 @@ locals {
 }
 
 module "communication_services" {
-  source                 = "git::https://github.com/AeternaModules/azurerm_communication_service.git?ref=v4.81.0"
+  source                 = "git::https://github.com/AeternaModules/azurerm_communication_service.git?ref=v5.0.0"
   communication_services = local.communication_services
 }
 
 module "communication_service_email_domain_associations" {
-  source                                          = "git::https://github.com/AeternaModules/azurerm_communication_service_email_domain_association.git?ref=v4.81.0"
+  source                                          = "git::https://github.com/AeternaModules/azurerm_communication_service_email_domain_association.git?ref=v5.0.0"
   communication_service_email_domain_associations = local.communication_service_email_domain_associations
   depends_on                                      = [module.communication_services]
 }
